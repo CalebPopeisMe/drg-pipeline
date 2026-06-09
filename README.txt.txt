@@ -1,0 +1,1 @@
+What is my true, validated Merits-per-hour trend across patches — and am I improving faster than the playerbase
