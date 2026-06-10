@@ -30,6 +30,22 @@ services:
       - metabase_data:/metabase.db
     depends_on:
       - postgres
+    
+  dagster:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      MINIO_ENDPOINT: http://minio:9000
+      MINIO_HOST_PORT: minio:9000
+      PG_HOST: postgres
+      DBT_PROFILES_DIR: /app/dbt
+    volumes:
+      - .:/app
+      - ./dagster_home:/opt/dagster
+    depends_on:
+      - minio
+      - postgres
 
 volumes:
   minio_data:

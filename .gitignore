@@ -1,2 +1,4 @@
 gcp_key.json
 *.duckdb
+dagster_home/storage/
+dagster_home/logs/
